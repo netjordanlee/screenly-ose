@@ -1171,6 +1171,12 @@ def settings_page():
             for field, default in CONFIGURABLE_SETTINGS.items():
                 value = request.form.get(field, default)
 
+                if field == "default_duration" and isnumeric(value)
+                    value = settings['default_duration'] if isnumeric(settings['default_duration']) else '10'
+
+                if field == "default_streaming_duration" and isnumeric(value)
+                    value = settings['default_duration'] if isnumeric(settings['default_duration']) else '300'
+
                 # skip user and password as they should be handled already.
                 if field == "user" or field == "password":
                     continue
